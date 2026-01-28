@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout from SCM') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/nujahd1716/terraform.git'
+                    url: 'https://github.com/lalitha753/terraform.git'
             }
         }
 
