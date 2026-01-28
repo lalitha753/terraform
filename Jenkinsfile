@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs "NodeJS"
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -12,28 +8,21 @@ pipeline {
             }
         }
 
-        stage('Check Node & NPM') {
+        stage('List Files') {
             steps {
-                sh 'node -v'
-                sh 'npm -v'
+                sh 'ls -l'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Terraform Init') {
             steps {
-                sh 'npm install'
+                sh 'terraform init'
             }
         }
 
-        stage('Build') {
+        stage('Terraform Validate') {
             steps {
-                sh 'CI=false npm run build'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'npm test || echo "No tests found"'
+                sh 'terraform validate'
             }
         }
     }
