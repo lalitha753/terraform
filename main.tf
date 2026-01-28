@@ -1,11 +1,10 @@
 resource "local_file" "pet" {
-  filename = "${path.module}/${var.pet_filename}"
+  filename = var.pet_filename
   content  = var.pet_content
 }
 
 resource "random_pet" "mypet" {
-  prefix   = var.random_pet_prefix
+  prefix    = var.random_pet_prefix
   separator = var.random_pet_separator
-  length   = var.random_pet_length
+  length    = var.random_pet_length
 }
-
