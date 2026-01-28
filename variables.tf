@@ -1,7 +1,7 @@
 variable "pet_filename" {
   description = "File path where the pet file will be created"
   type        = string
-  default     = "${path.module}/pets.txt"
+  default     = "pets.txt"
 }
 
 
