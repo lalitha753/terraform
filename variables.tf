@@ -1,9 +1,8 @@
 variable "pet_filename" {
   description = "File path where the pet file will be created"
   type        = string
-  default     = "pets.txt"
+  default     = "/tmp/pets.txt"
 }
-
 
 variable "pet_content" {
   description = "Content to be written into the pet file"
@@ -28,4 +27,3 @@ variable "random_pet_length" {
   type        = number
   default     = 1
 }
-
